@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+/* base styles */
+* {
+  margin: 0;
+  font-family: "Quicksand";
+  color: #333;
+}
+.feedNavbar {
+  padding: 30px;
+  display: flex;
+  align-items: center;
+  max-width: 800px;
+  margin: 0 auto;
+  border-bottom: 1px solid #f2f2f2;
+}
+.feedNavbar h1 {
+  color: #f1356d;
+}
+.feedNavbar .links {
+  margin-left: auto;
+}
+
+.updateButton :hover{
+  background-color:#f1356d;
+  color: #f2f2f2;
+}
+
+.deleteButton :hover{
+  background-color:#f1356d;
+  color: #f2f2f2;
+}
