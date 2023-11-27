@@ -6,7 +6,7 @@
   font-family: "Quicksand";
   color: #333;
 }
-.feedNavbar {
+/* .feedNavbar {
   padding: 30px;
   display: flex;
   align-items: center;
@@ -19,7 +19,7 @@
 }
 .feedNavbar .links {
   margin-left: auto;
-}
+} */
 
 .updateButton :hover{
   background-color:#f1356d;

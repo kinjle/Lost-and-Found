@@ -57,8 +57,11 @@ const Create = () => {
   }
 
   return (
+    
+    
 
-    <div className="create">
+    <div className="create bg-slate-50 rounded-lg p-5 ">
+     
       <h2>Create a new account</h2>
       <div>
       Full name: <input id="fname" type="text"  /><br />

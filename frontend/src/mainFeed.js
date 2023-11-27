@@ -82,7 +82,7 @@ export default function MainFeed() {
 
   return (
     <>
-      <nav className="feedNavbar">
+      <nav className="feedNavbar flex justify-between px-20 py-10 items-center bg-slate-50">
         <h1>Lost and Found</h1>
 
         <div className="links">
@@ -147,7 +147,9 @@ export default function MainFeed() {
                   width: "18rem",
                   marginLeft: "25px",
                   marginTop: "20px",
+                  backgroundColor: "##f8fafc",
                 }}
+                
                 key={item._id}
               >
                 <Card.Img variant="top" src={item.itemImage} />
