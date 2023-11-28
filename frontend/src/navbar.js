@@ -1,17 +1,40 @@
+import './index.css'
+import mainPicture from './assets/img/background.png'
+
 const Navbar = () => {
 
-    return ( 
-        <nav className="navbar">
-            <h1>Lost and Found</h1>
+    return (
+        <>
+            <section>
+                <div className="logincontainer">
+                    <div className="logincontainer-child logincontainer-child-1">
+                        <img src={mainPicture} alt="" />
+                    </div>
+                    <div className="logincontainer-child logincontainer-child-2">
+                        <div className="loginrightcontainer">
+                            <div className='loginlogo'>Lost and Found</div>
+                            <div className='loginDescription'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aperiam neque corrupti ea, nobis consequatur, sequi dolores, voluptatibus voluptates molestiae commodi quos ut cupiditate explicabo voluptatum dolore soluta. Voluptas deserunt asperiores nostrum perferendis veritatis illum molestias voluptatibus tempora, fuga quod quas quam ducimus doloribus sit repellat impedit porro, est excepturi commodi.
+                            </div>
 
-            <div className="links">
-                <a href="/login"><button>Login</button></a>
 
-                <a href="/signup"><button
-                style={{ color: 'white', backgroundColor: '#f1356d',}}>SignUp</button></a>
-            </div>
-        </nav>
-     );
+                            <div className='loginButtonContainer'>
+                                <a href="/login" className='loginATag'>
+                                    <button className='loginButton'>Login</button>
+                                </a>
+
+                                <a href="/signup">
+                                    <button className='signupButton'>
+                                        SignUp
+                                    </button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+
+        </>
+    )
 }
-
 export default Navbar;

@@ -1,0 +1,70 @@
+/* LATO FONT */
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Montserrat:wght@900&family=Poppins:wght@200;400&family=Roboto:wght@100&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  background-color: rgb(238, 238, 238);
+}
+
+.logocontainer {
+  margin-left: 10px;
+  font-size: 50px;
+  text-align: center;
+  padding: 10px;
+  color: rgb(198, 78, 98);
+  font-family: "Lato";
+}
+
+.navbuttoncontainer {
+  display: flex;
+  align-items: center;
+}
+
+.postitembutton {
+  border: none;
+  padding: 10px 25px;
+  margin-right: 10px;
+  border-radius: 12px;
+  background-color: rgb(217, 107, 126);
+  color: white;
+}
+
+.mypostbutton,
+.claimeditembutton {
+  border: none;
+  padding: 10px 25px;
+  margin-right: 10px;
+  border-radius: 12px;
+  background-color: black;
+  color: white;
+}
+
+.signoutbutton {
+  border: none;
+  padding: 10px 25px;
+  margin-right: 10px;
+  border-radius: 12px;
+  border: 1px solid rgb(217, 107, 126);
+  background-color: white;
+  color: black;
+}
+
+button:hover {
+  transform: scale(1.1);
+  transition: 0.2s ease-in-out;
+  border: 1px solid black;
+  color: black;
+  background-color: white;
+}
+
+.signoutbutton:hover {
+  background-color: rgb(217, 107, 126);
+  color: white;
+  border: none;
+}

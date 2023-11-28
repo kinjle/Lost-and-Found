@@ -2,6 +2,8 @@ import axios from "axios";
 import React from "react";
 import { useSignIn } from "react-auth-kit";
 import { useNavigate } from "react-router-dom";
+import "./index.css";
+import mainPicture from "./assets/img/background3.png";
 
 const Login = (props) => {
   const signIn = useSignIn();
@@ -28,11 +30,12 @@ const Login = (props) => {
             token: response.data.token,
             expiresIn: response.data.exp,
             tokenType: "Bearer",
-            authState: {email: document.getElementById("userEmail").value}
+            authState: { email: document.getElementById("userEmail").value },
           })
         ) {
           navigate("/mainfeed");
-        } else {}
+        } else {
+        }
       })
       .catch((e) => {
         console.log("Error occured" + e);
@@ -40,18 +43,35 @@ const Login = (props) => {
   };
 
   return (
-    <div className="login">
-      <h2>Log In</h2>
-      <form onSubmit={handleSubmit}>
-        Email: <input id="userEmail" type="text" required /> <br />
-        <br />
-        Password: <input id="userPass" type="password" required />
-        <br />
-        <br />
-        <button type="submit">Login</button>
-        <br />
-      </form>
-    </div>
+    <>
+      <div className="loginPageContainer">
+        <div className="loginPagecontainer-child loginPagecontainer-child-1">
+          <img src={mainPicture} alt="" />
+        </div>
+
+        <div className="loginPagecontainer-child loginPagecontainer-child-2">
+          <div className="loginRightContainer">
+            <h2>LogIn To Your Account </h2>
+
+            <div className="loginForm">
+              <form onSubmit={handleSubmit}>
+                <br /><label>Email: </label> <br />
+                <input id="userEmail" type="text" required /> <br />
+                <br />
+                <label>Password: </label> <br />
+                <input id="userPass" type="password" required />
+                <br />
+                <br /> <br />
+                <button className="loginPageButton" type="submit">
+                  Login
+                </button>
+                <br />
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </>
   );
 };
 

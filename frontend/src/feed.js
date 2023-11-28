@@ -1,12 +1,13 @@
 import axios from "axios";
-import "./feedNavbar.css";
+// import "./feedNavbar.css";
 import { Card, Button, Modal, ModalFooter } from "react-bootstrap";
 import Row from "react-bootstrap/Row";
 import { ToastContainer, toast } from "react-toastify";
-import 'react-toastify/dist/ReactToastify.css';
+import "react-toastify/dist/ReactToastify.css";
 
 import { useState, useEffect } from "react";
 import { useAuthHeader } from "react-auth-kit";
+import NavBar from "./components/NavBar";
 
 export default function Feed() {
   const [itemId, setItemId] = useState();
@@ -153,58 +154,7 @@ export default function Feed() {
 
   return (
     <>
-      <nav className="feedNavbar">
-        <h1>Lost and Found</h1>
-
-        <div className="links">
-          <a id="postItemButton" href="/lostitemform">
-            <button
-              style={{
-                color: "white",
-                backgroundColor: "#f1356d",
-                marginRight: "20px",
-              }}
-            >
-              Post Item
-            </button>
-          </a>
-
-          <a id="allPostsButton" href="/">
-            <button
-              style={{
-                color: "white",
-                marginRight: "20px",
-                color: "black",
-              }}
-            >
-              My Posts
-            </button>
-          </a>
-
-          <a id="claimedItemsButton" href="/claimeditems">
-            <button
-              style={{
-                color: "white",
-                marginRight: "20px",
-                color: "black",
-              }}
-            >
-              Claimed Items
-            </button>
-          </a>
-
-          <a id="signOutButton" href="/">
-            <button
-              style={{
-                color: "black",
-                marginRight: "20px",
-              }}
-            >
-              Sign Out
-            </button>
-          </a>
-        </div>
-      </nav>
+      <NavBar />
 
       <div>
         <Row>

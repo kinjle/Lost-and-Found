@@ -3,6 +3,7 @@
 /* base styles */
 * {
   margin: 0;
+  padding: 0;
   font-family: "Quicksand";
   color: #333;
 }

@@ -1,13 +1,13 @@
 import axios from "axios";
-import {useState} from 'react'
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { useState } from "react";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import "./index.css";
+import mainPicture from './assets/img/background2.png'
 
 const Create = () => {
-
-  const [isOtpSent, setIsOtpSent] = useState(false)
+  const [isOtpSent, setIsOtpSent] = useState(false);
   function signup() {
-    
     const payload = {
       fullname: document.getElementById("fname").value,
       username: document.getElementById("uname").value,
@@ -16,7 +16,7 @@ const Create = () => {
       phoneNumber: document.getElementById("userNum").value,
       inputOtp: document.getElementById("otp").value,
     };
-    console.log(payload)
+    console.log(payload);
 
     axios({
       url: "http://localhost:3000/auth/signup",
@@ -24,57 +24,99 @@ const Create = () => {
       data: payload,
     })
       .then((response) => {
-        console.log("sign up success")
-        console.log(response.data)
-        toast.success("Account successfully created!")
+        console.log("sign up success");
+        console.log(response.data);
+        toast.success("Account successfully created!");
       })
       .catch((e) => {
-        console.log("Error occured" +e );
-        toast.error("Signup unsuccessful")
+        console.log("Error occured" + e);
+        toast.error("Signup unsuccessful");
       });
   }
 
-  function handleOTP(){
+  function handleOTP() {
     const email = document.getElementById("userEmail").value;
-    const emailPattern= /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/
-    if(emailPattern.test(email))
-    {
+    const emailPattern = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
+    if (emailPattern.test(email)) {
       axios({
         url: "http://localhost:3000/auth/sendOtp",
         method: "POST",
-        data: {email: document.getElementById("userEmail").value}
+        data: { email: document.getElementById("userEmail").value },
       })
         .then((response) => {
-          console.log("otp sent")
-          setIsOtpSent(true)
-          console.log(response.data)
+          console.log("otp sent");
+          setIsOtpSent(true);
+          console.log(response.data);
         })
         .catch((e) => {
-          console.log("Error occured" +e );
+          console.log("Error occured" + e);
         });
-    }
-    else alert ("invalid email")
+    } else alert("invalid email");
   }
 
   return (
+    <>
+      <div className="signupcontainer">
+        <div className="signupcontainer-child signupcontainer-child-1">
+          <img src={mainPicture} alt="" />
+        </div>
 
-    <div className="create">
-      <h2>Create a new account</h2>
-      <div>
-      Full name: <input id="fname" type="text"  /><br />
-        Username: <input id="uname" type="text"  /><br />
-        Email: <input id="userEmail" type="email"  /> <button type="submit" onClick={handleOTP}>Send OTP</button> <br /> <br />
-        <label style={{visibility: "hidden"}}>Invalid Email</label>
-        {isOtpSent && <>OTP: <input id="otp" type="text" /><br /></>}
-        
-        Phone Number: <input id="userNum" type="text" pattern="^\d{10}$" /><br />
-        Password: <input id="userPass" type="text" /><br />
-      
-        <button type="submit" onClick={signup} >Submit</button><br />
-      </div>
-      <ToastContainer />
-    </div>
-  );
-}
+        <div className="signupcontainer-child signupcontainer-child-2">
+          <div className="signuprightcontainer">
+            <div className="createAccForm">
+              <h2>Create A New Account</h2> <br />
+
+              <div className="formcontainer">
+                <div className="form"> 
+                <label >Full name: </label> <br />
+                <input id="fname" type="text" /><br /> <br />
+
+                <label >Username: </label> <br /> 
+                 <input id="uname" type="text" /> <br /> <br />
+
+                <label >Email: </label> <br /> 
+                 <input id="userEmail" type="email" /> <br /> <br />
  
+                <button
+                  className="sendOtpButton"
+                  type="submit"
+                  onClick={handleOTP}
+                >
+                  Send OTP
+                </button>{" "}
+                <br /> <br /> 
+
+
+                {/* IN CASE OF ERROR SET visibility: "hidden" */}
+                <label style={{ display: "none" }}>Invalid Email</label>  
+                {isOtpSent && (
+                  <>
+                    OTP: <input id="otp" type="text" />
+                    <br />
+                  </>
+                )}
+
+
+                <label className="phonelabel">Phone Number:{" "}</label> <br />
+                <input id="userNum" type="text" pattern="^\d{10}$" /><br /> <br />
+
+                <label >Password: </label> <br /> 
+                <input id="userPass" type="text" />
+                <br /> <br />
+
+                <button className="submitButton" type="submit" onClick={signup}>
+                  Submit
+                </button>
+                <br />
+                </div>
+              </div>
+              <ToastContainer />
+            </div>
+          </div>
+        </div>
+      </div>
+    </>
+  );
+};
+
 export default Create;

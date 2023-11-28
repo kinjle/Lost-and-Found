@@ -1,13 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap'); */
+
+/* LATO FONT */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Montserrat:wght@900&family=Poppins:wght@200;400&family=Roboto:wght@100&display=swap');
 
 /* base styles */
 * {
   margin: 0;
-  font-family: "Quicksand";
+  padding: 0;
+  font-family: "Lato" "sans-serif";
   color: #333;
 }
 .navbar {
-  padding: 20px;
   display: flex;
   align-items: center;
   max-width: 600px;
@@ -17,56 +20,285 @@
 .navbar h1 {
   color: #f1356d;
 }
-.navbar .links {
-  margin-left: auto;
-}
+
 .navbar button {
-  margin-left: 16px;
   text-decoration: none;
-  padding: 6px;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 13px;
+  font-size: 20px;
 }
-.navbar button:hover {
-  color: #f1356d;
-}
+
 .content {
   max-width: 600px;
   margin: 40px auto;
   padding: 20px;
 }
 
-/* .landingPagePicture{
-  width: 100%;
-  height: 100%;
-} */
 
-/*-------------------- for form --------------------*/
-.create, .login{
-  max-width: 400px;
-  margin: 0 auto;
+
+/*-------------------- for signup page --------------------*/
+
+.signupcontainer{
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+}
+
+
+.signupcontainer-child{
+  height: auto;
+  width: 50%;
+  overflow: hidden;
+}
+
+.signupcontainer-child img{
+  height: 100vh;
+}
+
+.signuprightcontainer{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 70%;
+  margin-top: 10%;
+  /* border: 1px solid orange; */
+}
+
+.createAccForm h2{
+  font-size: 50px;
   text-align: center;
+  padding: 10px;
+  color: rgb(198, 78, 98);
+  font-family: 'Lato';
 }
-.create label {
-  text-align: left;
-  display: block;
+
+.formcontainer {
+  margin-left: 25%;
+  width: 50%;
 }
-.create h2, .login h2 {
-  font-size: 20px;
-  color: #f1356d;
-  margin-bottom: 30px;
+
+.form{
+  /* margin: auto; */
+  margin-left: 25%;
 }
-.create input, .create select {
-  width: 100%;
-  padding: 6px 10px;
-  margin: 10px 0;
-  border: 1px solid #ddd;
-  box-sizing: border-box;
-  display: block;
+
+.form label{
+  font-family: 'Lato';
+  font-weight: 100;
+} 
+
+.sendOtpButton{
+  padding: 10px 20px;
+  width: 150px;
+  border: none;
+  margin-left: 5%;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  font-size: 15px;
+  font-family: 'Lato';
 }
-.create button , .login button{
-  background: #f1356d;
-  color: #fff;
-  border: 0;
-  padding: 8px;
-  border-radius: 8px;
-  cursor: pointer;
+
+.submitButton{
+  width: 150px;
+  padding: 10px 20px;
+  margin-left: 5%;
+  border: none;
+  border-radius: 10px;
+  font-size: 15px;
+  font-family: 'Lato';
+}
+
+.sendOtpButton:hover{
+  transform: scale(1.2);
+  transition: 0.1s ease-in-out;
+  background-color: black;
+  color: white;
+}
+
+.submitButton:hover{
+  transform: scale(1.2);
+  transition: 0.1s ease-in-out;
+  background-color: white;
+  color: black;
+  border: 1px solid black;
+}
+
+.submitButton{
+  color: white;
+  background-color: rgb(190, 42, 67);
+}
+
+ /*------------------HOME PAGE----------------------*/
+.navbar-utility{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 60vh;
+}
+
+
+.container{
+  display: flex;
+}
+
+.container-child{
+  margin: auto;
+}
+
+.logincontainer{
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+}
+
+.logincontainer-child{
+  height: auto;
+  width: 50%;
+  overflow: hidden;
+}
+
+.logincontainer-child img{
+  height: 100vh;
+}
+
+.loginrightcontainer{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 60%;
+  margin-top: 10%;
+}
+
+.loginlogo{
+  font-size: 80px;
+  text-align: center;
+  padding: 10px;
+  color: rgb(198, 78, 98);
+  font-family: 'Lato';
+}
+.loginDescription{
+  padding: 0 60px;
+  text-align: justify;
+  font-family: 'Lato';
+  font-weight: 100;
+}
+
+
+.loginButtonContainer{
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  align-items: center;
+}
+
+.loginButton{
+  padding: 10px 20px;
+  width: 500px;
+  border: none;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  font-size: 30px;
+  font-family: 'Lato';
+}
+
+.signupButton{
+  width: 500px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  font-size: 30px;
+  font-family: 'Lato';
+}
+
+.loginButton:hover{
+  transform: scale(1.2);
+  transition: 0.1s ease-in-out;
+  background-color: black;
+  color: white;
+}
+
+.signupButton:hover{
+  transform: scale(1.2);
+  transition: 0.1s ease-in-out;
+  background-color: white;
+  color: black;
+  border: 1px solid black;
+}
+
+.signupButton{
+  color: white;
+  background-color: rgb(190, 42, 67);
+}
+
+/*-------------FOR LOGIN PAGE------------------*/
+
+.loginPagecontainer-child img{
+  height: 100vh;
+}
+
+.loginPageButton{
+  color: white;
+  background-color: rgb(190, 42, 67);
+}
+
+.loginPageButton{
+  width: 150px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  font-size: 15px;
+  font-family: 'Lato';
+}
+
+.loginPageButton:hover{
+  transform: scale(1.2);
+  transition: 0.1s ease-in-out;
+  background-color: white;
+  color: black;
+  border: 1px solid black;
+}
+
+.loginRightContainer h2{
+  font-size: 50px;
+  text-align: center;
+  padding: 10px;
+  color: rgb(198, 78, 98);
+  font-family: 'Lato';
+}
+
+.loginPageContainer{
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+}
+
+
+.loginPagecontainer-child {
+  height: auto;
+  width: 50%;
+  overflow: hidden;
+}
+
+
+.loginRightContainer{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin-top: 30%;
+  /* border: 1px solid orange; */
+}
+
+.loginForm {
+  margin-left: 35%;
+  width: 50%;
+}
+
+.loginForm label{
+  font-family: 'Lato';
+  font-weight: 100;
+} 
+
+.loginPageButton{
+  margin-left: 4.5%;
 }
