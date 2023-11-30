@@ -76,11 +76,15 @@
 .formcontainer {
   margin-left: 25%;
   width: 50%;
+  border: 2px solid rgb(190, 42, 67);
+  border-radius: 10px;
 }
 
 .form{
-  /* margin: auto; */
-  margin-left: 25%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  margin-left: 5%;
+  margin-right: 5%;
 }
 
 .form label{
@@ -91,8 +95,10 @@
 .sendOtpButton{
   padding: 10px 20px;
   width: 150px;
-  border: none;
-  margin-left: 5%;
+  border: solid rgb(190, 42, 67);
+  color: white;
+  background-color: rgb(190, 42, 67);
+  margin-left: 27%;
   border-radius: 10px;
   margin-bottom: 20px;
   font-size: 15px;
@@ -102,7 +108,7 @@
 .submitButton{
   width: 150px;
   padding: 10px 20px;
-  margin-left: 5%;
+  margin-left: 27%;
   border: none;
   border-radius: 10px;
   font-size: 15px;
@@ -240,6 +246,7 @@
 .loginPageButton{
   color: white;
   background-color: rgb(190, 42, 67);
+  margin-bottom: 10%;
 }
 
 .loginPageButton{
@@ -285,13 +292,20 @@
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  margin-top: 30%;
+  margin-top: 25%;
   /* border: 1px solid orange; */
 }
 
 .loginForm {
-  margin-left: 35%;
+  margin-left: 25%;
   width: 50%;
+  border: 2px solid rgb(190, 42, 67);
+  border-radius: 10px;
+}
+
+.loginForm form{
+  margin-left: 5%;
+  margin-right: 5%;
 }
 
 .loginForm label{
@@ -300,5 +314,5 @@
 } 
 
 .loginPageButton{
-  margin-left: 4.5%;
+  margin-left: 25%;
 }

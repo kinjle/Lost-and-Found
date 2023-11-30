@@ -175,7 +175,7 @@ export default function Feed() {
                 <Card.Body>
                   <Card.Title>{item.itemName}</Card.Title>
                   <Card.Text>{item.itemDescription}</Card.Text>
-                  <Card.Text>{item.itemStatus}</Card.Text>
+                  {/* <Card.Text>{item.itemStatus}</Card.Text> */}
                   <Card.Text>{item.securityQues}</Card.Text>
 
                   <a href={`/lostitemform?edit=true&id=${item._id}`}>

@@ -13,7 +13,7 @@ const Navbar = () => {
                     <div className="logincontainer-child logincontainer-child-2">
                         <div className="loginrightcontainer">
                             <div className='loginlogo'>Lost and Found</div>
-                            <div className='loginDescription'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aperiam neque corrupti ea, nobis consequatur, sequi dolores, voluptatibus voluptates molestiae commodi quos ut cupiditate explicabo voluptatum dolore soluta. Voluptas deserunt asperiores nostrum perferendis veritatis illum molestias voluptatibus tempora, fuga quod quas quam ducimus doloribus sit repellat impedit porro, est excepturi commodi.
+                            <div className='loginDescription'>Discover the ease of finding lost belongings with Lost and Found! With a user-friendly interface, you'll navigate the process seamlessly and report lost items effortlessly. Join now and experience the simplicity of turning lost into found with just a few clicks!
                             </div>
 
 

@@ -8,6 +8,7 @@ const LostItemForm = () =>{
     const [itemName, setItemName] = useState("")
     const [itemDescription, setItemDescription] = useState("")
     const [securityQues, setSecurityQues] = useState("")
+    const [correspondingAnswer, setCorrespondingAnswer] = useState("")
     const [itemImage, setItemImage] = useState("")
 
     const authHeader = useAuthHeader();
@@ -19,6 +20,7 @@ const LostItemForm = () =>{
       formData.append('itemName', itemName)
       formData.append('itemDescription', itemDescription)
       formData.append('securityQues', securityQues)
+      formData.append('correspondingAnswer',correspondingAnswer )
       formData.append('itemImage', itemImage)
       console.log(formData)
       
@@ -40,25 +42,41 @@ const LostItemForm = () =>{
           console.log("Error occured" +e );
           toast.error("Posting unsuccessful")
         });
-        console.log("postted")
+        console.log("posted")
     } 
 
     return (
-      <div className="create">
-        <h2>Post an item</h2>
-        <div>
-          <strong>Item Name:</strong> <input id="itemName" type="text"  onChange = {e => setItemName(e.target.value)}  /> <br />
-          <strong>Item Description:</strong> <input id="itemDes" type="text" placeholder="Found in (area)" onChange = {e => setItemDescription(e.target.value)}/><br />
+      <>
+        <div className="lostFormContainer">
+        <div className="lostFormContainer-child">
+        <h2>Post An Item</h2>
+        <div className="lostForm">
+          <label>Item Name:</label> 
+          <input id="itemName" type="text" required onChange = {e => setItemName(e.target.value)}  /> <br /> <br />
+
+
+          <label>Item Description:</label> 
+          <input id="itemDes" type="text" placeholder="Description of the time, place and status the item was found in" required onChange = {e => setItemDescription(e.target.value)}/><br /> <br />
+
           
-          <strong>Security Question:</strong> <input id="secQ" type="text" placeholder="Eg: What is the scratch?" onChange = {e => setSecurityQues(e.target.value)} /><br />
-          <strong>Image:</strong> <input id="itemImage" type="file"  onChange = {e => setItemImage(e.target.files[0])}/> <br />
-          <button type="submit" onClick={lostForm} >Post item</button><br />
+          <label>Security Question:</label> 
+          <input id="secQ" type="text" placeholder="Question related to the item" required onChange = {e => setSecurityQues(e.target.value)} /><br /> <br />
+
+          <label>Corresponding Answer:</label> 
+          <input id="secQ" type="text" placeholder="Answer the above question" required onChange = {e => setCorrespondingAnswer(e.target.value)} /><br /> <br />
+
+
+          <label>Image:</label> 
+          <input id="itemImage" type="file" required onChange = {e => setItemImage(e.target.files[0])}/> <br /> 
+
+
+          <button className="postItemButton" type="submit" onClick={lostForm} >Post Item</button>
         </div>
         <ToastContainer />
         <ToastContainer />
+      </div> 
       </div>
+      </>
     );
-
 }
-
 export default LostItemForm

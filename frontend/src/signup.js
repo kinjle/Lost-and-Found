@@ -84,15 +84,15 @@ const Create = () => {
                 >
                   Send OTP
                 </button>{" "}
-                <br /> <br /> 
+                <br /> 
 
 
                 {/* IN CASE OF ERROR SET visibility: "hidden" */}
                 <label style={{ display: "none" }}>Invalid Email</label>  
                 {isOtpSent && (
                   <>
-                    OTP: <input id="otp" type="text" />
-                    <br />
+                    <label >Enter OTP: </label> <input id="otp" type="text" />
+                    <br /> <br />
                   </>
                 )}
 
@@ -101,7 +101,7 @@ const Create = () => {
                 <input id="userNum" type="text" pattern="^\d{10}$" /><br /> <br />
 
                 <label >Password: </label> <br /> 
-                <input id="userPass" type="text" />
+                <input id="userPass" type="password" />
                 <br /> <br />
 
                 <button className="submitButton" type="submit" onClick={signup}>

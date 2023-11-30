@@ -69,7 +69,7 @@ router.put("/claim/:id", checkAuth, async (req, res) => {
                 answer,
                 isClaimed: true,
                 claimedBy: req.user._id,
-                isVerified: false,
+                isVerified: true,
                 isRejected: false
             },
         },

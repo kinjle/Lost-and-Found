@@ -50,7 +50,6 @@ nav {
   padding: 10px 25px;
   margin-right: 10px;
   border-radius: 12px;
-  border: 1px solid rgb(217, 107, 126);
   background-color: white;
   color: black;
 }
@@ -64,6 +63,71 @@ button:hover {
 }
 
 .signoutbutton:hover {
+  background-color: rgb(217, 107, 126);
+  color: white;
+  border: none;
+}
+
+
+
+/*-------------------POST LOST ITEM FORM---------------------*/
+
+
+.lostFormContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.lostFormContainer-child h2{
+  font-size: 50px;
+  text-align: center;
+  padding: 10px;
+  color: rgb(198, 78, 98);
+  font-family: 'Lato';
+}
+
+.lostFormContainer-child {
+  background-color: #f7f7f7;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.lostForm {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 16px;
+  box-sizing: border-box;
+}
+
+.postItemButton {
+  padding: 10px 20px;
+  width: 150px;
+  border: solid rgb(190, 42, 67);
+  color: white;
+  background-color: rgb(190, 42, 67);
+  margin-left: 30%;
+  border-radius: 10px;
+  margin-top: 15px;
+  font-size: 15px;
+  font-family: 'Lato';
+} 
+
+
+button:hover {
   background-color: rgb(217, 107, 126);
   color: white;
   border: none;

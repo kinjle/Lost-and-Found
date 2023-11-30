@@ -12,35 +12,43 @@ export default function MainFeed() {
   const [itemId, setItemId] = useState();
   const [items, setItems] = useState([]);
   const [securityQues, setsecurityQues] = useState("");
+  const [correspondingAnswer, setCorrespondingAnswer] = useState("")
   const [answer, setanswer] = useState("");
   const [show, setShow] = useState(false);
   const [username, setUserName] = useState("");
   const authHeader = useAuthHeader();
 
   const handleSubmitResponse = () => {
-    axios({
-      url: `http://localhost:3000/lostitemform/claim/${itemId}`,
-      method: "PUT",
-      headers: {
-        Authorization: authHeader(),
-      },
-      data: {
-        answer: answer,
-      },
-    })
-      .then((res) => {
-        setsecurityQues(res.data.securityQues);
-        setanswer(res.data.answer);
-        window.location.reload();
+    if(correspondingAnswer == answer){
+      axios({
+        url: `http://localhost:3000/lostitemform/claim/${itemId}`,
+        method: "PUT",
+        headers: {
+          Authorization: authHeader(),
+        },
+        data: {
+          answer: answer,
+        },
       })
-      .catch((e) => console.log(e.message));
-    setShow(false);
+        .then((res) => {
+          setsecurityQues(res.data.securityQues);
+          setanswer(res.data.answer);
+          window.location.reload();
+        })
+        .catch((e) => console.log(e.message));
+      setShow(false);
+    }
+     else {
+      alert("Wrong answer");
+     }
+    
   };
 
-  const onClaimClick = (e, itemId, securityQues) => {
+  const onClaimClick = (e, itemId, securityQues, corresAns) => {
     e.preventDefault();
     setItemId(itemId);
     setsecurityQues(securityQues);
+    setCorrespondingAnswer(corresAns)
     setShow(true);
   };
 
@@ -82,24 +90,6 @@ export default function MainFeed() {
     <>
       <NavBar />
 
-      {/* <nav className="navcontainer">
-        <div className="logocontainer">Lost and Found</div>
-        <div className="navbuttoncontainer">
-          <a href="/lostitemform" className="">
-            <button className="postitembutton">Post Item</button>
-          </a>
-          <a href="/feed">
-            <button className="mypostbutton">My Posts</button>
-          </a>
-          <a href="/claimeditems">
-            <button className="claimeditembutton">Claim Item</button>
-          </a>
-          <a href="/">
-            <button className="signoutbutton">Sign Out</button>
-          </a>
-        </div>
-      </nav> */}
-
       <div>
         <Row>
           <h2 style={{ marginTop: "15px", marginLeft: "25px" }}>
@@ -130,7 +120,7 @@ export default function MainFeed() {
                         variant="primary"
                         className="updateButton"
                         onClick={(e) => {
-                          onClaimClick(e, item._id, item.securityQues);
+                          onClaimClick(e, item._id, item.securityQues, item.correspondingAnswer);
                           // setUpdateId(item._id);
                         }}
                         style={{
